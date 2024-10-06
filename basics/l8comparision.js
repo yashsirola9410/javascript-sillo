@@ -23,4 +23,4 @@ console.log(undefined < 0);       // false
 
 // === 
 
-console.log("2" === 2);      // false kyuki === data type ko bhi compare karta hai 
+console.log("2" === 2);      // false kyuki === data type ko bhi compare karta hai c
