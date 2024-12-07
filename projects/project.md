@@ -31,3 +31,32 @@ buttons.forEach(function (button) {
 
 ```
 
+
+## Project 2 
+
+```javascript
+  const form = document.querySelector('form');
+// this use case will give you empty
+
+//const height = parseInt(document.querySelector('#height').value)
+
+form.addEventListener('submit', function (E) {
+  E.preventDefault();
+
+  const h = parseInt(document.querySelector('#height').value);
+  const w = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if (h === '' || h < 0 || isNaN(h)) {
+    results.innerHTML = `Please give a valid height ${h}`;
+  } else if (w === '' || w < 0 || isNaN(w)) {
+    result.innerHTML = `Please give a valid weight ${w}`;
+  } else {
+    const bmi = (w / ((h * h) / 10000)).toFixed(2);
+
+    //show the result
+    results.innerHTML = `<span>${bmi}</span>`;
+  }
+});
+
+```
