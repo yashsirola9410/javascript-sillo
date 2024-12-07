@@ -63,3 +63,18 @@ form.addEventListener('submit', function (E) {
 
 
 ##Project 3 digital clock 
+
+```javascript 
+const clock = document.getElementById('clock');
+
+setInterval(function () {
+  let date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+// kya kiya ismai ??
+//clock ko selet kiya
+// setInterval function hota hai jo time ke according function ko run karta hai
+// to humne function usi mai daal diya
+// uske baaad clock ka inner HTML change kar diya
+
+```
