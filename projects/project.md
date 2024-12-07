@@ -1,6 +1,6 @@
 # projects Related to Dom
 
-##  Project link 
+##  Project link background color 
 [click] (https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
 
 # Solution 
@@ -32,7 +32,7 @@ buttons.forEach(function (button) {
 ```
 
 
-## Project 2 
+## Project 2  bmi calculator 
 
 ```javascript
   const form = document.querySelector('form');
@@ -60,3 +60,6 @@ form.addEventListener('submit', function (E) {
 });
 
 ```
+
+
+##Project 3 digital clock 
