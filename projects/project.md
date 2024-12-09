@@ -78,3 +78,11 @@ setInterval(function () {
 // uske baaad clock ka inner HTML change kar diya
 
 ```
+
+
+
+## Project 4 Guess The no.
+
+```javascript
+
+```
