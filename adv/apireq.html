@@ -14,6 +14,77 @@
 </body>
 <script>
     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-   
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET' , requestUrl)
+    xhr.onereadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data.followers);
+        }
+    }
+
+    xhr.send();
+
 </script>
-</html>
+</html>\
+
+
+<!-- If u wnat to understand what is happening in the code u can have a look of it -->
+
+<!-- 1. Defining the API URL
+javascript
+Copy code
+const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+This is the URL where your script will request data from. It’s pointing to the GitHub API to fetch information about the user hiteshchoudhary.
+2. Creating an XMLHttpRequest object
+javascript
+Copy code
+const xhr = new XMLHttpRequest();
+XMLHttpRequest is a built-in object in JavaScript that allows us to fetch data from a server without reloading the page.
+3. Opening a connection
+javascript
+Copy code
+xhr.open('GET', requestUrl);
+xhr.open() prepares a request:
+'GET' means we’re asking the server to get data.
+requestUrl is the URL where the data is located.
+This step initializes the request but doesn’t send it yet.
+4. Defining what happens during the request
+javascript
+Copy code
+xhr.onereadystatechange = function() {
+    console.log(xhr.readyState);
+    if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(typeof data);
+        console.log(data.followers);
+    }
+}
+Here’s what’s happening:
+
+xhr.onereadystatechange: This function runs whenever the state of the request changes (from UNSENT to DONE).
+
+The readyState can have values from 0 to 4:
+0 = UNSENT: Request is created but not opened.
+1 = OPENED: Request is opened but not sent.
+2 = HEADERS_RECEIVED: Headers are received.
+3 = LOADING: Data is being downloaded.
+4 = DONE: The operation is complete, and the response is ready.
+console.log(xhr.readyState):
+
+This logs the current readyState to the console so you can see how the request progresses.
+if (xhr.readyState === 4):
+
+This checks if the request is fully complete (state 4).
+Once it’s complete, it processes the response:
+this.responseText contains the data returned by the server (in JSON format).
+JSON.parse(this.responseText) converts the JSON string into a JavaScript object.
+data.followers accesses the number of followers of the user from the data received.
+5. Sending the request
+javascript
+Copy code
+xhr.send();
+Finally, this actually sends the request to the server. -->
