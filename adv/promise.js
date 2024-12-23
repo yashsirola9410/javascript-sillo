@@ -11,3 +11,11 @@
 // Timers or delays.
 // Interacting with databases.
 
+const promise_one  = new Promise(function(resolve , reject ){
+    //Do any async task here 
+    // DB calls , cryptography , network 
+    setTimeout(function(){
+        console.log('Async task is completed');
+        resolve()
+    },1000)
+})
