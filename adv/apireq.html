@@ -14,12 +14,12 @@
 </body>
 <script>
     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-    const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();  // ye k method hai  used to interact with the users 
 
-    xhr.open('GET' , requestUrl)
-    xhr.onereadystatechange = function(){
-        console.log(xhr.readyState);
-        if(xhr.readyState === 4){
+    xhr.open('GET' , requestUrl)   // .open in a method used to initialize a request   ::  GET retrieves data from the server and POST  send data to the server 
+    xhr.onereadystatechange = function(){  // .onereadystatechange is a method that is called whenever the readyState property of the XMLHttpRequest changes.
+        console.log(xhr.readyState);       
+        if(xhr.readyState === 4){       // REST EVERYTHINGH IS WRITTEN DOWN THERE YOU CAN  HAVE A LOOK OF IT 
             const data = JSON.parse(this.responseText)
             console.log(typeof data);
             console.log(data.followers);
