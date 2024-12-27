@@ -14,16 +14,19 @@ const user =  {
 //console.log(user.getUserDetails());
 //console.log(this);
 
-function User(username , loginCount , isLoggedIn){
+
+function User(username , login , email){
     this.username = username ;
-    this.loginCount = loginCount ;
-    this.isLoggedIn = isLoggedIn ,
+    this.login = login ;
+    this.email = email ,
 
     this.greeting = function(){
         console.log(`welcome ${this.username }`);
     }
     return this 
 }
+
+//new Keyword: Used to create a new object from the User constructor
 
 const userOne = new User("yash" , 20 , true );
 const usertwo = new User("neta" , 21 , true );
